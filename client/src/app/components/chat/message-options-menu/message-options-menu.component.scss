@@ -1,0 +1,138 @@
+/* Message options menu styling */
+.message-options-menu-container {
+  display: inline-block;
+}
+
+/* More button styling */
+.more-button {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: rgba(224, 122, 101, 0.1);
+  }
+  
+  .material-icons {
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #888;
+  }
+}
+
+/* Custom menu panel styling */
+.message-options-menu {
+  &.mat-mdc-menu-panel {
+    min-width: 180px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14) !important;
+    overflow: hidden !important;
+    margin-top: 4px !important;
+    background-color: white !important;
+  }
+}
+
+/* Override Angular Material menu styles */
+.message-options-menu {
+  .mat-mdc-menu-content {
+    padding: 0 !important;
+  }
+  
+  .mdc-list {
+    padding: 0 !important;
+  }
+  
+  .mat-mdc-menu-item {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 40px !important;
+    padding: 0 16px !important;
+    color: #333333 !important;
+    letter-spacing: normal !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  .mat-mdc-menu-item:hover {
+    background-color: #f5f5f5 !important;
+  }
+  
+  .mdc-list-item__primary-text {
+    color: #333333 !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    letter-spacing: normal !important;
+  }
+  
+  /* Remove ripple effect */
+  .mat-mdc-menu-item .mat-ripple {
+    display: none !important;
+  }
+  
+  /* Menu surface styling */
+  .mdc-menu-surface {
+    border-radius: 4px !important;
+    padding: 0 !important;
+    background-color: white !important;
+    overflow: hidden !important;
+  }
+  
+  /* Menu content container */
+  .menu-content {
+    display: block;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .more-button {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    
+    .material-icons {
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+    }
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .more-button {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    
+    .material-icons {
+      font-size: 12px;
+      width: 12px;
+      height: 12px;
+      line-height: 12px;
+    }
+  }
+  
+  .message-options-menu.mat-mdc-menu-panel {
+    min-width: 160px !important;
+  }
+  
+  .message-options-menu .mat-mdc-menu-item {
+    font-size: 12px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    line-height: 36px !important;
+  }
+}

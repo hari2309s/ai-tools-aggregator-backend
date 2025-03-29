@@ -1,0 +1,64 @@
+<div class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="sidebar-header">
+    <div class="app-title" [class.hidden]="isCollapsed">AI Aggregator</div>
+    <button class="toggle-button" (click)="toggleSidebar()">
+      <span class="material-icons">{{ isCollapsed ? 'menu' : 'menu_open' }}</span>
+    </button>
+  </div>
+  
+  <div class="sidebar-content">
+    <button class="new-chat-button" (click)="onNewChat()">
+      <span class="material-icons">add</span>
+      <span class="button-text" [class.hidden]="isCollapsed">New Chat</span>
+    </button>
+    
+    <!-- Available Services Section -->
+    <div class="sidebar-section">
+      <div class="section-header">
+        <span class="section-title">Available Services</span>
+        <button class="add-service-button" (click)="openAddServiceDialog()">
+          <span class="material-icons">add_circle</span>
+        </button>
+      </div>
+      
+      <div class="section-content">
+        <div *ngIf="availableServices.length === 0" class="empty-section">
+          No services added yet
+        </div>
+        
+        <div *ngFor="let service of availableServices" class="sidebar-item">
+          <span class="material-icons">{{ getIconForProvider(service?.name || '') }}</span>
+          <span class="item-text">{{ service?.name || 'Unknown Service' }}</span>
+          <span *ngIf="service?.capabilities?.specializations?.length" class="service-specializations">
+            {{ service?.capabilities?.specializations?.join(', ') || '' }}
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Chat History Section -->
+    <div class="sidebar-section">
+      <div class="section-header">
+        <span class="section-title">Chat History</span>
+      </div>
+      
+      <div class="section-content">
+        <div *ngIf="chatHistory.length === 0" class="empty-section">
+          No chat history
+        </div>
+        
+        <div *ngFor="let chat of chatHistory" class="sidebar-item">
+          <span class="material-icons">chat</span>
+          <span class="item-text">{{ chat.title }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sidebar-footer">
+      <div class="settings-button">
+        <span class="material-icons">settings</span>
+        <span class="button-text" [class.hidden]="isCollapsed">Settings</span>
+      </div>
+    </div>
+  </div>
+</div>

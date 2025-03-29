@@ -1,0 +1,219 @@
+/* Message container */
+.message-container {
+  display: flex;
+  margin-bottom: 8px;
+  position: relative;
+  
+  &.user {
+    flex-direction: row-reverse;
+  }
+  
+  &.ai {
+    flex-direction: row;
+  }
+}
+
+/* Avatar styling */
+.avatar-container {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 6px;
+  
+  .avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/* Message wrapper */
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  min-width: 0;
+}
+
+/* Message bubble */
+.message-bubble {
+  padding: 6px 10px;
+  border-radius: 12px;
+  position: relative;
+  word-wrap: break-word;
+  
+  &.user {
+    background-color: #f0e9da;
+    border-bottom-right-radius: 4px;
+  }
+  
+  &.ai {
+    background-color: #e07a65;
+    color: white;
+    border-bottom-left-radius: 4px;
+  }
+}
+
+/* Message content */
+.message-content {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Attachment styling */
+.attachment {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  
+  .attachment-icon {
+    margin-right: 8px;
+    
+    .material-icons {
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+    }
+  }
+  
+  .attachment-name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+/* Message metadata */
+.message-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1px;
+  font-size: 11px;
+  color: #888;
+  
+  .time {
+    margin-right: 6px;
+  }
+  
+  .more-options {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* More button */
+.more-button {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  
+  .material-icons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .message-wrapper {
+    max-width: 75%;
+  }
+  
+  .message-bubble {
+    padding: 6px 10px;
+  }
+  
+  .message-content {
+    font-size: 13px;
+  }
+  
+  .avatar-container .avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .attachment .attachment-icon .material-icons {
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .message-container {
+    margin-bottom: 12px;
+  }
+  
+  .message-wrapper {
+    max-width: 80%;
+  }
+  
+  .message-bubble {
+    padding: 8px 12px;
+    border-radius: 16px;
+  }
+  
+  .message-bubble.user {
+    border-bottom-right-radius: 4px;
+  }
+  
+  .message-bubble.ai {
+    border-bottom-left-radius: 4px;
+  }
+  
+  .message-content {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .avatar-container {
+    margin-right: 6px;
+    
+    .avatar {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  .message-meta {
+    font-size: 10px;
+  }
+  
+  .more-button {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    
+    .material-icons {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+    }
+  }
+  
+  .attachment .attachment-icon .material-icons {
+    font-size: 14px;
+    height: 14px;
+    width: 14px;
+    line-height: 14px;
+  }
+}

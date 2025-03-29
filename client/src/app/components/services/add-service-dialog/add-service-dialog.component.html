@@ -1,0 +1,46 @@
+<div class="dialog-container">
+  <h2 class="dialog-title">Add New AI Service</h2>
+  <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="provider">Service Provider</label>
+      <div class="custom-select">
+        <select id="provider" formControlName="provider">
+          <option value="" disabled selected>Select a provider</option>
+          <option value="openai">OpenAI</option>
+          <option value="anthropic">Anthropic</option>
+          <option value="google">Google AI</option>
+          <option value="cohere">Cohere</option>
+          <option value="huggingface">Hugging Face</option>
+          <option value="replicate">Replicate</option>
+        </select>
+        <div class="select-arrow">▼</div>
+      </div>
+      <div class="error-message" *ngIf="serviceForm.get('provider')?.invalid && serviceForm.get('provider')?.touched">
+        Service provider is required
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="apiKey">API Key</label>
+      <input id="apiKey" formControlName="apiKey" type="password" placeholder="Enter your API key">
+      <div class="error-message" *ngIf="serviceForm.get('apiKey')?.invalid && serviceForm.get('apiKey')?.touched">
+        API key is required
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="model">Model (Optional)</label>
+      <input id="model" formControlName="model" type="text" placeholder="e.g., gpt-4, claude-3">
+    </div>
+
+    <div class="dialog-actions">
+      <button class="cancel-button" type="button" (click)="dialogRef.close()">Cancel</button>
+      <button 
+        class="add-button" 
+        type="submit"
+        [disabled]="serviceForm.invalid">
+        Add
+      </button>
+    </div>
+  </form>
+</div>

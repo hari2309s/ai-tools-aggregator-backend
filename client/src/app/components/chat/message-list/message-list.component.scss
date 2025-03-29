@@ -1,0 +1,115 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--main-background, #ffffff);
+}
+
+/* Header moved to chat-container component */
+
+.message-list {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #ffffff; /* White background matching screenshot */
+  min-height: 400px;  /* Added minimum height for desktop mode */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Empty state styles */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.empty-state-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-state-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #666666;
+  margin: 0 0 8px 0;
+}
+
+.empty-state-description {
+  font-size: 14px;
+  color: #888888;
+  margin: 0;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .chat-header {
+    padding: 10px 12px;
+    
+    h2 {
+      font-size: 15px;
+    }
+    
+    .header-actions button .material-icons {
+      font-size: 16px;
+      height: 16px;
+      width: 16px;
+      line-height: 16px;
+    }
+  }
+  
+  .empty-state-title {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .chat-header {
+    padding: 8px 10px;
+    
+    h2 {
+      font-size: 14px;
+    }
+    
+    .header-actions {
+      gap: 2px;
+      
+      button .material-icons {
+        font-size: 14px;
+        height: 14px;
+        width: 14px;
+        line-height: 14px;
+      }
+    }
+  }
+  
+  .message-list {
+    padding: 10px;
+  }
+  
+  .empty-state {
+    padding: 10px;
+  }
+  
+  .empty-state-title {
+    font-size: 15px;
+  }
+  
+  .empty-state-description {
+    font-size: 12px;
+  }
+}

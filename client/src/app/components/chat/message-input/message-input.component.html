@@ -1,0 +1,15 @@
+<div class="message-input-container">
+  <input 
+    type="text" 
+    class="message-input" 
+    [placeholder]="placeholder" 
+    [(ngModel)]="messageText" 
+    (keyup.enter)="onSendMessage()"
+    [disabled]="isDisabled">
+  <button 
+    class="send-button" 
+    (click)="onSendMessage()" 
+    [disabled]="!messageText || isDisabled">
+    <mat-icon>arrow_forward</mat-icon>
+  </button>
+</div>

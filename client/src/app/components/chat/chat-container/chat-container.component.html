@@ -1,0 +1,41 @@
+<div class="chat-container">
+  <!-- Header with options -->
+  <div class="chat-header">
+    <h2>
+      <span class="material-icons">chat</span>
+      {{ chatTitle || 'New Conversation' }}
+    </h2>
+    <div class="header-actions">
+      <button mat-icon-button>
+        <span class="material-icons">delete_outline</span>
+      </button>
+      <button mat-icon-button>
+        <span class="material-icons">visibility_off</span>
+      </button>
+      <button mat-icon-button>
+        <span class="material-icons">file_download</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Main content area -->
+  <div class="chat-content">
+    <!-- Empty state message centered vertically -->
+    <div class="message-area">
+      <div *ngIf="messages.length === 0" class="empty-state">
+        <h2>Start a new conversation</h2>
+        <p>Your messages will appear here</p>
+      </div>
+      
+      <!-- Messages when they exist -->
+      <div *ngIf="messages.length > 0" class="message-list-container">
+        <app-message-list [messages]="messages"></app-message-list>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Input field at the bottom -->
+  <div class="input-area">
+    <app-message-input (sendMessage)="onSendMessage($event)"></app-message-input>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<!-- Main app container with chat interface -->
+<div class="app-container">
+  <div class="chat-interface">
+    <!-- Sidebar Component -->
+    <app-sidebar (newChat)="onNewChat()"></app-sidebar>
+    
+    <!-- Main chat area -->
+    <div class="chat-area">
+      <app-chat-container></app-chat-container>
+    </div>
+  </div>
+</div>

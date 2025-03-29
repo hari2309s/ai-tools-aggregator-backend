@@ -1,0 +1,24 @@
+<div class="message-container" [ngClass]="message.sender">
+  <div class="avatar-container" *ngIf="message.sender === 'user'">
+    <div class="avatar">
+      <img src="assets/images/user-avatar.png" alt="User" onerror="this.src='assets/images/default-avatar.png'">
+    </div>
+  </div>
+  <div class="message-wrapper">
+    <div class="message-bubble" [ngClass]="message.sender">
+      <div class="message-content">{{ message.content }}</div>
+      <div *ngIf="message.attachment" class="attachment">
+        <div class="attachment-icon">
+          <span class="material-icons">attach_file</span>
+        </div>
+        <div class="attachment-name">{{ message.attachment }}</div>
+      </div>
+    </div>
+    <div class="message-meta">
+      <span class="time">{{ message.timestamp | date:'MMM d, h:mm a' }}</span>
+      <span class="more-options">
+        <app-message-options-menu></app-message-options-menu>
+      </span>
+    </div>
+  </div>
+</div>

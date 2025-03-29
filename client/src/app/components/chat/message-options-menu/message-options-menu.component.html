@@ -1,0 +1,16 @@
+<div class="message-options-menu-container">
+  <button mat-icon-button [matMenuTriggerFor]="optionsMenu" class="more-button">
+    <span class="material-icons">more_horiz</span>
+  </button>
+  <mat-menu #optionsMenu="matMenu" class="message-options-menu" yPosition="below" xPosition="before">
+    <div class="menu-content">
+      <button mat-menu-item>Forward</button>
+      <button mat-menu-item>Print</button>
+      <button mat-menu-item>Delete</button>
+      <button mat-menu-item>Report spam</button>
+      <button mat-menu-item>Report phishing</button>
+      <button mat-menu-item>Translate</button>
+      <button mat-menu-item>Mark as unread</button>
+    </div>
+  </mat-menu>
+</div>

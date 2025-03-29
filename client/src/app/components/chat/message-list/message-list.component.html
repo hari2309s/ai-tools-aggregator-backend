@@ -1,0 +1,18 @@
+<div class="message-container">
+  <div #messageContainer class="message-list">
+    <!-- Empty state when no messages are present -->
+    <div *ngIf="messages.length === 0" class="empty-state">
+      <div class="empty-state-content">
+        <h2 class="empty-state-title">Start a new conversation</h2>
+        <p class="empty-state-description">Your messages will appear here</p>
+      </div>
+    </div>
+    
+    <!-- Messages when they exist -->
+    <ng-container *ngIf="messages.length > 0">
+      <ng-container *ngFor="let message of messages">
+        <app-message-bubble [message]="message"></app-message-bubble>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
